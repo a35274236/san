@@ -22,7 +22,7 @@ h1{font-size:clamp(25px,4.2vw,43px);line-height:1.16;letter-spacing:-2px;margin:
 .cell+.cell{border-left:1px dotted #aeb8bd}
 .period{text-align:center;font-weight:700;font-size:14px}
 .law{text-align:center;font-weight:700;font-size:13px}
-.law small{display:block;color:#39789b;font-weight:500;font-size:10px;line-height:1.3;margin-top:4px}.law a{color:inherit;text-decoration:none;display:block}.law a:hover{text-decoration:underline;color:#087bb6}.photo-hint{display:inline-block;margin-top:7px;padding:3px 9px;border-radius:12px;background:#e7f5fb;color:#087bb6;font-size:11px;font-weight:800}
+.law small{display:block;color:#39789b;font-weight:500;font-size:10px;line-height:1.3;margin-top:4px}.law-link{border:0;background:transparent;color:inherit;font:inherit;font-weight:700;line-height:1.35;cursor:pointer;padding:0}.law-link:hover{text-decoration:underline;color:#087bb6}.photo-hint{display:inline-block;margin-top:7px;padding:3px 9px;border-radius:12px;background:#e7f5fb;color:#087bb6;font-size:11px;font-weight:800}.photo-modal{display:none;position:fixed;inset:0;z-index:9999;background:#101820eF;align-items:center;justify-content:center;padding:18px}.photo-modal.open{display:flex}.photo-modal__panel{position:relative;width:min(96vw,1000px);height:min(94vh,1300px);background:#fff;border-radius:12px;padding:48px 12px 12px;display:flex;align-items:center;justify-content:center}.photo-modal__image{max-width:100%;max-height:100%;object-fit:contain}.photo-modal__close{position:absolute;right:12px;top:8px;border:0;border-radius:7px;background:#174d70;color:white;padding:8px 14px;font-size:15px;cursor:pointer}
 .detail p,.fine p{margin:2px 0}
 .dot{color:#c65a4e;font-weight:900}.tick{color:#31865f;font-weight:900}
 .fine{text-align:center;font-size:12px}
@@ -66,7 +66,7 @@ h1{font-size:clamp(25px,4.2vw,43px);line-height:1.16;letter-spacing:-2px;margin:
 <section class="records">
 <article class="record">
 <div class="cell period">상시</div>
-<div class="cell law">산업안전보건법령<br>요지 게시<small>[산업안전보건법 제34조]</small></div>
+<div class="cell law"><button class="law-link" id="openLawSummary" type="button">산업안전보건법령<br>요지 게시</button><small>[산업안전보건법 제34조]</small><span class="photo-hint">사진 보기</span></div>
 <div class="cell detail"><p><span class="dot">•</span> 게시판, 근로자 휴게실 등<br>　(근로자가 쉽게 확인 가능한 장소)</p></div>
 <div class="cell fine"><strong>500만원 이하의 과태료</strong></div>
 </article>
@@ -164,5 +164,22 @@ h1{font-size:clamp(25px,4.2vw,43px);line-height:1.16;letter-spacing:-2px;margin:
 </section>
 <footer class="footer">경상북도교육청</footer>
 </main>
+<div class="photo-modal" id="lawSummaryModal" aria-hidden="true">
+  <div class="photo-modal__panel" role="dialog" aria-modal="true" aria-label="산업안전보건법령 요지">
+    <button class="photo-modal__close" id="closeLawSummary" type="button">닫기 ✕</button>
+    <img class="photo-modal__image" src="law-summary.jpg" alt="산업안전보건법령 요지 게시 사진">
+  </div>
+</div>
+<script>
+(() => {
+  const modal = document.getElementById("lawSummaryModal");
+  const open = document.getElementById("openLawSummary");
+  const close = document.getElementById("closeLawSummary");
+  open.addEventListener("click", () => { modal.classList.add("open"); modal.setAttribute("aria-hidden", "false"); });
+  close.addEventListener("click", () => { modal.classList.remove("open"); modal.setAttribute("aria-hidden", "true"); });
+  modal.addEventListener("click", event => { if (event.target === modal) close.click(); });
+  document.addEventListener("keydown", event => { if (event.key === "Escape" && modal.classList.contains("open")) close.click(); });
+})();
+</script>
 </body>
 </html>
