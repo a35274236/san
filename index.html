@@ -1,151 +1,168 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="산업안전보건 관리 안내 자료-1">
 <title>산업안전보건 관리 안내 자료-1</title>
 <style>
-:root{--blue:#168fc9;--deep:#087bb6;--yellow:#ffdf45;--ink:#263746;--line:#9eabb4;--paper:#fff}
+@page{size:A4 portrait;margin:0}
 *{box-sizing:border-box}
-body{margin:0;background:#e8f5fb;color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif}
-.page{max-width:1100px;margin:24px auto;background:var(--blue);padding:28px 34px 24px;box-shadow:0 8px 28px #16445a26}
-.top{display:flex;justify-content:space-between;align-items:center;gap:20px;color:white;margin:0 8px 20px}
-h1{font-size:clamp(25px,4vw,42px);letter-spacing:-1.8px;margin:0;font-weight:900}
-.contact{background:#fff;color:#263746;border-radius:10px;padding:12px 18px;text-align:center;white-space:nowrap;font-weight:800}
-.contact strong{display:block;color:#b84c55;font-size:18px;margin-top:4px}
-table{width:100%;border-collapse:separate;border-spacing:0 7px;table-layout:fixed;font-size:15px;line-height:1.55}
-col.period{width:10%}col.rule{width:21%}col.detail{width:47%}col.penalty{width:22%}
-th{background:var(--yellow);border:2px solid #384a52;border-radius:16px;padding:10px 7px;font-size:18px}
-td{background:var(--paper);border-top:1.5px solid #46535b;border-bottom:1.5px solid #46535b;padding:15px 14px;vertical-align:middle}
-td:first-child{border-left:1.5px solid #46535b;border-radius:13px 0 0 13px;text-align:center;font-weight:800}
-td:last-child{border-right:1.5px solid #46535b;border-radius:0 13px 13px 0}
-.rule{text-align:center;font-weight:700}
-.rule small{display:block;color:#39749b;font-weight:500;font-size:12px}
-.detail p{margin:3px 0}
-.dot{color:#c65b4e;font-weight:900}.check{color:#388a63;font-weight:900}
-.penalty{text-align:center;font-size:14px}
-.fine{font-weight:800;color:#3e4a52}
-.note{margin:2px 0 0;padding:8px 12px;background:#fff1d8;border-radius:20px;text-align:center;font-weight:700;color:#765d35}
-.mini{width:100%;border-collapse:collapse;margin:8px 0;font-size:12px;text-align:center}
-.mini th,.mini td{border:1px solid #aab4ba;border-radius:0;padding:5px;background:#fff}
-.mini th{font-size:12px}
-.footer{color:white;text-align:center;font-size:28px;font-weight:900;letter-spacing:2px;padding:22px 0 4px}
-.footer span{display:block;font-size:12px;font-weight:500;letter-spacing:0;margin-top:6px;opacity:.9}
-@media(max-width:720px){
- .page{margin:0;padding:18px 10px}.top{align-items:flex-start;flex-direction:column;margin:0 4px 12px}
- .contact{align-self:flex-end}table,tbody,tr,td{display:block;width:100%}
- thead{display:none}table{border-spacing:0 12px}tr{border:1px solid #43535b;border-radius:12px;overflow:hidden;background:#fff}
- td{border:0!important;border-radius:0!important;padding:10px 12px;text-align:left!important}
- td:first-child{background:#fff4b8;padding:6px 12px}
- td:first-child:before{content:"주기  ·  "}
- td:nth-child(2){background:#f4f8fa;border-bottom:1px dotted #b8c2c8!important}
- td:nth-child(2):before{content:"관련 조항  ·  ";color:#39749b;font-size:12px}
- td:nth-child(3){padding-top:12px}
- td:last-child{background:#f4f8fa;border-top:1px dotted #b8c2c8!important}
- td:last-child:before{content:"벌칙 / 과태료  ·  ";font-weight:800}
- .mini{font-size:11px}.footer{font-size:23px}
+html,body{margin:0;padding:0}
+body{font-family:"Malgun Gothic","맑은 고딕",sans-serif;background:#e8eef1;color:#29343b}
+.poster{width:min(100%,850px);margin:18px auto;background:#1598d0;padding:34px 30px 24px;position:relative;overflow:hidden;box-shadow:0 4px 18px #17394a30}
+.heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:0 5px 20px;color:#fff}
+h1{font-size:clamp(25px,4.2vw,43px);line-height:1.16;letter-spacing:-2px;margin:5px 0;font-weight:900;white-space:nowrap}
+.contact{flex:none;background:#f8f8f6;color:#333;border:1px solid #52616a;border-radius:9px;padding:9px 13px;text-align:center;font-size:12px;font-weight:700;line-height:1.35}
+.contact b{display:block;color:#b34e5b;font-size:15px;margin-top:3px}
+.columns{display:grid;grid-template-columns:9% 21% 48% 22%;gap:0;margin-bottom:5px}
+.columns div{background:#ffdf43;border:2px solid #263e4c;border-radius:15px;text-align:center;padding:8px 3px;font-size:16px;font-weight:900}
+.records{display:flex;flex-direction:column;gap:6px}
+.record{display:grid;grid-template-columns:9% 21% 48% 22%;background:#fff;border:1.5px solid #46545b;border-radius:13px;overflow:hidden;min-height:74px}
+.cell{padding:11px 10px;display:flex;flex-direction:column;justify-content:center;font-size:13px;line-height:1.42;min-width:0}
+.cell+.cell{border-left:1px dotted #aeb8bd}
+.period{text-align:center;font-weight:700;font-size:14px}
+.law{text-align:center;font-weight:700;font-size:13px}
+.law small{display:block;color:#39789b;font-weight:500;font-size:10px;line-height:1.3;margin-top:4px}
+.detail p,.fine p{margin:2px 0}
+.dot{color:#c65a4e;font-weight:900}.tick{color:#31865f;font-weight:900}
+.fine{text-align:center;font-size:12px}
+.fine strong{font-size:13px}
+.subtable{width:100%;border-collapse:collapse;margin:7px 0 3px;font-size:10px;text-align:center;line-height:1.25}
+.subtable th,.subtable td{border:1px solid #aeb7bc;padding:3px 2px;background:#fff}
+.subtable th{font-weight:700}
+.note{display:block;background:#fff1d4;border-radius:15px;text-align:center;padding:5px 7px;margin-top:6px;font-size:10px;font-weight:700;color:#6c5b42}
+.footer{margin:18px 0 0;text-align:center;color:#fff;font-size:27px;font-weight:900;letter-spacing:3px}
+.footer:before{content:"◀";font-size:17px;color:#f2d83e;margin-right:12px}
+.footer:after{content:"▶";font-size:17px;color:#f2d83e;margin-left:12px}
+@media(max-width:620px){
+ .poster{margin:0;padding:18px 9px 16px}
+ .heading{gap:5px;margin:0 2px 12px}
+ h1{font-size:clamp(19px,5vw,29px);white-space:normal;letter-spacing:-1.2px}
+ .contact{font-size:10px;padding:6px 7px}.contact b{font-size:12px}
+ .columns{grid-template-columns:10% 22% 45% 23%}
+ .columns div{font-size:11px;padding:7px 1px;border-radius:10px}
+ .record{grid-template-columns:10% 22% 45% 23%}
+ .cell{padding:7px 5px;font-size:10px;line-height:1.38}
+ .period,.law{font-size:10px}.law small{font-size:8px}
+ .fine{font-size:9px}.fine strong{font-size:10px}
+ .subtable{font-size:8px}.subtable th,.subtable td{padding:2px 1px}
+ .note{font-size:8px;padding:4px}
+ .footer{font-size:19px;letter-spacing:1px}
 }
-@media print{body{background:#fff}.page{margin:0;max-width:none;box-shadow:none;print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+@media print{
+ body{background:#fff}
+ .poster{width:210mm;margin:0;padding:9mm 8mm 6mm;box-shadow:none;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ .cell{font-size:10pt}.law{font-size:10pt}.fine{font-size:9pt}
+}
 </style>
 </head>
 <body>
-<main class="page">
-<header class="top">
+<main class="poster">
+<header class="heading">
 <h1>산업안전보건 관리 안내 자료-1</h1>
-<div class="contact">산업안전담당<strong>054) 805-3961</strong></div>
+<div class="contact">산업안전담당<b>054) 805-3961</b></div>
 </header>
-<table aria-label="산업안전보건 관리 안내">
-<colgroup><col class="period"><col class="rule"><col class="detail"><col class="penalty"></colgroup>
-<thead><tr><th>주기</th><th>관련 조항</th><th>주요 내용</th><th>벌칙 / 과태료</th></tr></thead>
-<tbody>
-<tr>
-<td>상시</td>
-<td class="rule">산업안전보건법령 요지 게시<small>[산업안전보건법 제34조]</small></td>
-<td class="detail"><p><span class="dot">•</span> 게시판, 근로자 휴게실 등 (근로자가 쉽게 확인 가능한 장소)</p></td>
-<td class="penalty"><span class="fine">500만원 이하의 과태료</span></td>
-</tr>
-<tr>
-<td>상시</td>
-<td class="rule">물질안전보건자료(MSDS) 게시 및 교육<small>[산업안전보건법 제114조, 제115조]</small></td>
-<td class="detail">
+<div class="columns"><div>주기</div><div>관련조항</div><div>주요 내용</div><div>벌칙 / 과태료</div></div>
+<section class="records">
+<article class="record">
+<div class="cell period">상시</div>
+<div class="cell law">산업안전보건법령<br>요지 게시<small>[산업안전보건법 제34조]</small></div>
+<div class="cell detail"><p><span class="dot">•</span> 게시판, 근로자 휴게실 등<br>　(근로자가 쉽게 확인 가능한 장소)</p></div>
+<div class="cell fine"><strong>500만원 이하의 과태료</strong></div>
+</article>
+
+<article class="record">
+<div class="cell period">상시</div>
+<div class="cell law">물질안전보건자료<br>(MSDS) 게시 및 교육<small>[산업안전보건법 제114조, 제115조]</small></div>
+<div class="cell detail">
 <p><span class="dot">•</span> 화학물질의 안전한 사용을 위한 설명서</p>
-<p><span class="check">✓</span> MSDS 게시 및 비치</p>
-<p><span class="check">✓</span> 작업공정별 관리 요령 게시</p>
-<p><span class="check">✓</span> MSDS 교육</p>
-<p style="padding-left:18px">(신규, 단시간 근로자 채용 시 필수)</p>
-<p style="padding-left:18px">※ 교육시간 해당 물질 당 최소 10분간 교육<br>　(특히, 유해성·위험성, 응급 조치요령,<br>　노출방지 및 개인보호구)</p>
-<p><span class="check">✓</span> 경고표지 부착</p>
-<p style="padding-left:18px">※ 덜어쓰는 소분용기에도 반드시 부착</p>
-<table class="mini">
-<thead><tr><th colspan="2">방법 / 위반</th><th colspan="3">과태료(만원)</th></tr><tr><th>구분</th><th>위반</th><th>1차</th><th>2차</th><th>3차</th></tr></thead>
-<tbody>
+<p><span class="tick">✓</span> MSDS 게시 및 비치</p>
+<p><span class="tick">✓</span> 작업공정별 관리 요령 게시</p>
+<p><span class="tick">✓</span> MSDS 교육</p>
+<p>　(신규, 단시간 근로자 채용 시 필수)</p>
+<p>　※ 교육시간 해당 물질 당 최소 10분간 교육</p>
+<p>　　(특히, 유해성·위험성, 응급 조치요령,</p>
+<p>　　노출방지 및 개인보호구)</p>
+<p><span class="tick">✓</span> 경고표지 부착</p>
+<p>　※ 덜어쓰는 소분용기에도 반드시 부착</p>
+<table class="subtable">
+<tr><th colspan="2">방법 / 위반</th><th colspan="3">과태료(만원)</th></tr>
+<tr><th>구분</th><th>위반</th><th>1차</th><th>2차</th><th>3차</th></tr>
 <tr><td rowspan="3">물질<br>1종당,<br>1개소당</td><td>MSDS<br>미비치</td><td>100</td><td>200</td><td>500</td></tr>
 <tr><td>작업공정<br>관리요령<br>미게시</td><td>100</td><td>200</td><td>500</td></tr>
 <tr><td>경고표시<br>미부착</td><td>50</td><td>100</td><td>300</td></tr>
 <tr><td>근로자<br>1명당</td><td>취급<br>근로자<br>교육</td><td>50</td><td>100</td><td>300</td></tr>
-</tbody></table>
-<p class="note"><span class="dot">*</span> 화학물질의 유해·위험성, 취급방법, 응급조치 요령 등의 정보를 상세하게 설명해주는 화학물질 사용설명서</p>
-</td>
-<td class="penalty"><span class="fine">500만원 이하의 과태료</span></td>
-</tr>
-<tr>
-<td>상시</td>
-<td class="rule">안전보건표지 설치·부착<small>[산업안전보건법 제37조]</small></td>
-<td class="detail"><p><span class="dot">•</span> 유해·위험한 시설 및 장소에 안전보건표지 부착</p></td>
-<td class="penalty"><span class="fine">500만원 이하의 과태료</span></td>
-</tr>
-<tr>
-<td>상시</td>
-<td class="rule">산업재해 발생 은폐금지 및 보고<small>[산업안전보건법 제57조]</small><small>(산업재해 조사표)</small></td>
-<td class="detail">
+</table>
+<span class="note"><span class="dot">*</span> 화학물질의 유해위험성, 취급방법, 응급조치 요령 등의 정보를 상세하게 설명해주는 화학물질 사용설명서</span>
+</div>
+<div class="cell fine"><strong>500만원 이하의 과태료</strong></div>
+</article>
+
+<article class="record">
+<div class="cell period">상시</div>
+<div class="cell law">안전보건표지<br>설치·부착<small>[산업안전보건법 제37조]</small></div>
+<div class="cell detail"><p><span class="dot">•</span> 유해·위험한 시설 및 장소에 안전보건표지 부착</p></div>
+<div class="cell fine"><strong>500만원 이하의 과태료</strong></div>
+</article>
+
+<article class="record">
+<div class="cell period">상시</div>
+<div class="cell law">산업재해 발생<br>은폐금지 및 보고<br>(산업재해 조사표)<small>[산업안전보건법 제57조]</small></div>
+<div class="cell detail">
 <p><span class="dot">•</span> 산업재해 발생 시 보고 체계에 따라 보고</p>
-<p><span class="check">✓</span> 사망 시: 지체없이 전화 및 팩스 보고 (학교 ▶ 교육안전과)</p>
-<p><span class="check">✓</span> 3일 이상(의사진단서 상, 학교 임의 판단 금지) 치료가 필요한<br>　재해 발생 시: 교육안전과에 3일 이내 유선 보고<br>　(학교 ▶ 교육안전과 ▶ 관할지청)</p>
-<p style="text-align:center;font-weight:800">전담신고전화 054) 805-3964, 3967</p>
-</td>
-<td class="penalty">
-<p><span class="check">✓</span> 은폐: 1년 이하 징역<br>또는 1천만원 이하 벌금</p>
-<p><span class="check">✓</span> 미보고·지연보고:<br>1천500만원 이하의 과태료</p>
-<p style="color:#777;font-size:12px">※ 경북교육청 현재<br>3차 과태료 발생 기준</p>
-</td>
-</tr>
-<tr>
-<td>상시</td>
-<td class="rule">휴게시설 설치 기준 준수<small>[산업안전보건법 시행규칙 제194조의2]</small></td>
-<td class="detail">
+<p><span class="tick">✓</span> 사망 시: 지체없이 전화 및 팩스 보고 (학교 ▶ 교육안전과)</p>
+<p><span class="tick">✓</span> 3일 이상(의사진단서 상, 학교 임의 판단 금지) 치료가 필요한</p>
+<p>　재해 발생 시: 교육안전과에 3일 이내 유선 보고</p>
+<p>　(학교 ▶ 교육안전과 ▶ 관할지청)</p>
+<p style="text-align:center;font-weight:700;margin-top:7px">전담신고전화 054) 805-3964, 3967</p>
+</div>
+<div class="cell fine">
+<p><span class="tick">✓</span> 은폐: 1년 이하 징역</p><p>　또는 1천만원 이하 벌금</p>
+<p style="margin-top:7px"><span class="tick">✓</span> 미보고·지연보고:</p><p>　1천500만원 이하의 과태료</p>
+<p style="font-size:10px;color:#777;margin-top:6px">※ 경북교육청 현재<br>　3차 과태료 발생 기준</p>
+</div>
+</article>
+
+<article class="record">
+<div class="cell period">상시</div>
+<div class="cell law">휴게시설 설치<br>기준 준수<small>[산업안전보건법 시행규칙<br>제194조의2]</small></div>
+<div class="cell detail">
 <p><span class="dot">•</span> 최소면적 6㎡, 층고 2.1m 이상,</p>
 <p>　냉난방 설비 구비 및 환기, 의자 등</p>
 <p>　편의시설과 식수 제공</p>
-<table class="mini">
-<thead><tr><th>위반내용</th><th colspan="3">과태료(만원)</th></tr><tr><th></th><th>1차</th><th>2차</th><th>3차</th></tr></thead>
-<tbody><tr><td>미설치</td><td>1,500</td><td>1,500</td><td>1,500</td></tr><tr><td>기준위반(면적)</td><td>50</td><td>250</td><td>500</td></tr></tbody>
+<table class="subtable">
+<tr><th>위반내용</th><th colspan="3">과태료(만원)</th></tr>
+<tr><th></th><th>1차</th><th>2차</th><th>3차</th></tr>
+<tr><td>미설치</td><td>1,500</td><td>1,500</td><td>1,500</td></tr>
+<tr><td>기준위반(면적)</td><td>50</td><td>250</td><td>500</td></tr>
 </table>
-</td>
-<td class="penalty"><span class="fine">기준위반 과태료 표 참조</span></td>
-</tr>
-<tr>
-<td>상시</td>
-<td class="rule">안전보호구 지급 및 착용<small>[안전보건규칙 제32조]</small><small>[산업안전보건법 제40조]</small></td>
-<td class="detail"><p><span class="dot">•</span> 적정 안전보호구 지급 (대장 작성) 및 착용</p></td>
-<td class="penalty">
-<p><span class="check">✓</span> 보호구 미지급<br>　: 5천만원 이하의 과태료</p>
-<p><span class="check">✓</span> 보호구 미착용<br>　: 과태료 5만원</p>
-<p style="font-size:12px">※ 부과 대상: 해당 근로자</p>
-</td>
-</tr>
-<tr>
-<td>상시</td>
-<td class="rule">서류의 보존<small>[산업안전보건법 제164조]</small></td>
-<td class="detail">
+</div>
+<div class="cell fine"><strong>위반내용별<br>과태료 표 참조</strong></div>
+</article>
+
+<article class="record">
+<div class="cell period">상시</div>
+<div class="cell law">안전보호구 지급<br>및 착용<small>[안전보건규칙 제32조]<br>[산업안전보건법 제40조]</small></div>
+<div class="cell detail"><p><span class="dot">•</span> 적정 안전보호구 지급 (대장 작성) 및 착용</p></div>
+<div class="cell fine">
+<p><span class="tick">✓</span> 보호구 미지급</p><p>　: 5천만원 이하의 과태료</p>
+<p style="margin-top:5px"><span class="tick">✓</span> 보호구 미착용</p><p>　: 과태료 5만원</p>
+<p style="font-size:10px">※ 부과 대상: 해당 근로자</p>
+</div>
+</article>
+
+<article class="record">
+<div class="cell period">상시</div>
+<div class="cell law">서류의 보존<small>[산업안전보건법 제164조]</small></div>
+<div class="cell detail">
 <p><span class="dot">•</span> 산업재해 발생기록(3년)</p>
 <p><span class="dot">•</span> 건강진단 서류(5년)</p>
 <p><span class="dot">•</span> 위험성평가 실시(3년) 등</p>
-</td>
-<td class="penalty"><span class="fine">300만원 이하의 과태료</span></td>
-</tr>
-</tbody></table>
-<footer class="footer">경상북도교육청<span>산업안전보건 관리 안내 자료</span></footer>
+</div>
+<div class="cell fine"><strong>300만원 이하의 과태료</strong></div>
+</article>
+</section>
+<footer class="footer">경상북도교육청</footer>
 </main>
 </body>
 </html>
