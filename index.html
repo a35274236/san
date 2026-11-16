@@ -54,10 +54,31 @@ h1{font-size:clamp(25px,4.2vw,43px);line-height:1.16;letter-spacing:-2px;margin:
  .poster{width:210mm;margin:0;padding:9mm 8mm 6mm;box-shadow:none;print-color-adjust:exact;-webkit-print-color-adjust:exact}
  .cell{font-size:10pt}.law{font-size:10pt}.fine{font-size:9pt}
 }
+
+.page{display:none}
+.page.active{display:block}
+.page-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin:18px 0 0;color:#fff}
+.page-nav button{border:0;background:transparent;color:#f2d83e;font-size:20px;font-weight:900;cursor:pointer;padding:5px 10px}
+.page-nav .page-name{color:#fff;font-size:24px;font-weight:900;letter-spacing:2px}
+.page-nav button:disabled{opacity:.25;cursor:default}
+.page2 .record{min-height:88px}
+.page2 .cell{font-size:13px}
+.page2 .detail p{margin:3px 0}
+.page2 .fine{font-size:12px}
+.page2 .subtable{font-size:11px}
+@media(max-width:620px){
+ .page-nav .page-name{font-size:17px}
+ .page-nav{gap:7px}
+ .page-nav button{font-size:17px}
+ .page2 .cell{font-size:10px}
+ .page2 .fine{font-size:9px}
+ .page2 .subtable{font-size:8px}
+}
+
 </style>
 </head>
 <body>
-<main class="poster">
+<main class="poster page page1 active" id="page1">
 <header class="heading">
 <h1>산업안전보건 관리 안내 자료-1</h1>
 <div class="contact">산업안전담당<b>054) 805-3961</b></div>
@@ -162,7 +183,99 @@ h1{font-size:clamp(25px,4.2vw,43px);line-height:1.16;letter-spacing:-2px;margin:
 <div class="cell fine"><strong>300만원 이하의 과태료</strong></div>
 </article>
 </section>
-<footer class="footer">경상북도교육청</footer>
+<footer class="page-nav"><button type="button" onclick="showPage(1)" disabled aria-label="이전 페이지">◀</button><span class="page-name">경상북도교육청</span><button type="button" onclick="showPage(2)" aria-label="다음 페이지">▶</button></footer>
+</main>
+<main class="poster page page2" id="page2">
+<header class="heading"><h1>산업안전보건 관리 안내 자료-2</h1><div class="contact">산업안전담당<b>054) 805-3961</b></div></header>
+<div class="columns"><div>주기</div><div>관련조항</div><div>주요 내용</div><div>벌칙 / 과태료</div></div>
+<section class="records">
+<article class="record">
+<div class="cell period">정기(1년)<br>수시(필요시)</div>
+<div class="cell law">위험성평가의 실시<small>[산업안전보건법 제36조]</small></div>
+<div class="cell detail">
+<p><span class="dot">•</span> 연 3회 위험성평가 컨설팅 기관에 위탁하여 실시</p>
+<p><span class="dot">•</span> 학교 내 담당자 지정하여 위험요인 및 대책 결과 보고 후, 내부 결재 시행</p>
+<p style="color:#31865f;font-weight:700">(전문기관 ▶ 학교장)</p>
+</div>
+<div class="cell fine">관리감독자 직무 미이행<br>: 500만원 이하의 과태료</div>
+</article>
+<article class="record">
+<div class="cell period">정기</div>
+<div class="cell law">정기안전보건교육<small>[산업안전보건법 제29조]</small></div>
+<div class="cell detail">
+<p><span class="dot">•</span> 관리감독자: 연간16시간<br>　(본청 교육 권장, 집합 8시간, 사이버 8시간)</p>
+<p><span class="dot">•</span> 현업업무종사자: 반기 12시간, 연간 24시간</p>
+<p>　※ 교육 중 증빙자료 보관(5년)</p>
+<p><span class="tick">✓</span> 현장교육(교육일지 작성·보관)</p>
+<p><span class="tick">✓</span> 온라인교육(수료증 보관)</p>
+</div>
+<div class="cell fine">
+<p><span class="tick">✓</span> 교육대상 관리감독자</p><p>　: 1명당 50만원</p><p>　※ 2차:250만원, 3차:500만원</p>
+<p style="margin-top:8px"><span class="tick">✓</span> 교육대상 현업업무종사자</p><p>　: 1명당 10만원</p><p>　※ 2차:20만원, 3차:50만원</p>
+</div>
+</article>
+<article class="record">
+<div class="cell period">정기</div>
+<div class="cell law">근골격계 유해요인 조사<small>[산업안전보건법 제39조]</small></div>
+<div class="cell detail">
+<p><span class="dot">•</span> 정기조사: 3년 1회</p>
+<p><span class="dot">•</span> 경북 도내 학교(기관) 3권역으로 나눠 근골격계 부담작업 유해요인 조사 진행</p>
+</div>
+<div class="cell fine">5년 이하의 징역 또는<br>5천만원 이하의 벌금</div>
+</article>
+<article class="record">
+<div class="cell period">정기</div>
+<div class="cell law">건강검진<small>[산업안전보건법 제129조, 제130조]</small></div>
+<div class="cell detail">
+<p><span class="dot">•</span> 건강진단(의무): 비사무직 연 1회</p>
+<p><span class="dot">•</span> 특정 유해인자 노출 시 특수건강진단</p>
+<p><span class="dot">•</span> 검진결과표 보관(5년)</p>
+</div>
+<div class="cell fine">1천만원 이하의 과태료</div>
+</article>
+<article class="record">
+<div class="cell period">정기</div>
+<div class="cell law">작업환경측정<small>[산업안전보건법 제125조]</small></div>
+<div class="cell detail">
+<p><span class="dot">•</span> 유해요인측정: 소음 / 일산화탄소 / 포름알데하이드</p>
+<p><span class="dot">•</span> 정기측정: 연 1회</p>
+<p><span class="dot">•</span> 수시측정: 노출 기준 초과교 연 2회 측정</p>
+</div>
+<div class="cell fine"><table class="subtable">
+<tr><th>방법</th><th colspan="3">과태료(만원)</th></tr>
+<tr><th></th><th>1차</th><th>2차</th><th>3차</th></tr>
+<tr><td>근로자<br>1명당</td><td>20</td><td>50</td><td>100</td></tr>
+</table></div>
+</article>
+<article class="record">
+<div class="cell period">정기</div>
+<div class="cell law">중대재해처벌법에 따른<br>안전보건 확보의무<br>이행사항 점검<small>[중대재해 처벌 등에 관한 법률 시행령 제5조]</small></div>
+<div class="cell detail">
+<p><span class="dot">•</span> 연 2회 (반기 1회 이상)</p>
+<p><span class="dot">•</span> 유해·위험요인 확인 개선 (위험성 평가, 산업안전점검의 날)</p>
+<p><span class="dot">•</span> 안전보건 예산 편성·집행 (보호구, 재해 예방 장비 구입 등)</p>
+<p><span class="dot">•</span> 현업업무종사자 의견 청취 (간담회, 협의회 등)</p>
+<p><span class="dot">•</span> 긴급상황 시 체계적 대응 (비상연락망, 재해발생 대응 훈련)</p>
+<p><span class="dot">•</span> 도급·용역·위탁 시 종사자 안전보건확보</p>
+<p>　(위험성평가표, 안전보건관리계획서, 수급업체 평가표 등)</p>
+<p><span class="dot">•</span> 안전보건교육 (이수증 등)</p>
+</div>
+<div class="cell fine">※ 안전보건 확보의무 이행사항 점검을 위험성평가 컨설팅 전문기관과 합동점검 추진중임 (25.9.~)</div>
+</article>
+<article class="record">
+<div class="cell period">수시</div>
+<div class="cell law">현업업무종사자<br>채용 시 교육<small>[산업안전보건법 제29조]</small></div>
+<div class="cell detail">
+<p><span class="dot">•</span> 근로계약 기간별 교육</p>
+<p><span class="tick">✓</span> 1개월 초과: 8시간 이상</p>
+<p><span class="tick">✓</span> 1주일 초과 ~1개월 이하: 4시간 이상</p>
+<p><span class="tick">✓</span> 1주일 이하: 1시간 이상</p>
+<p>　※ 교육 시기: 업무 투입 전</p>
+</div>
+<div class="cell fine">교육대상 현업업무종사자<br>: 1명 당 10만원<br><small>※ 2차:20만원, 3차:50만원</small></div>
+</article>
+</section>
+<footer class="page-nav"><button type="button" onclick="showPage(1)" aria-label="이전 페이지">◀</button><span class="page-name">경상북도교육청</span><button type="button" onclick="showPage(2)" disabled aria-label="다음 페이지">▶</button></footer>
 </main>
 <div class="photo-modal" id="lawSummaryModal" aria-hidden="true">
   <div class="photo-modal__panel" role="dialog" aria-modal="true" aria-label="산업안전보건법령 요지">
@@ -171,6 +284,11 @@ h1{font-size:clamp(25px,4.2vw,43px);line-height:1.16;letter-spacing:-2px;margin:
   </div>
 </div>
 <script>
+function showPage(n){
+  document.getElementById("page1").classList.toggle("active", n === 1);
+  document.getElementById("page2").classList.toggle("active", n === 2);
+  window.scrollTo({top:0,behavior:"smooth"});
+}
 (() => {
   const modal = document.getElementById("lawSummaryModal");
   const open = document.getElementById("openLawSummary");
